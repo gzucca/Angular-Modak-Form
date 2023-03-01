@@ -6,5 +6,10 @@ import { Component } from '@angular/core';
   styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent {
+  sections: string[] = ['Personal Information', 'Adress', 'Payment'];
+  currentSection: number = 0;
 
+  // isActive(sectionIndex: number){
+  //   return this.sections.[sectionIndex] === this.currentSection
+  // }
 }

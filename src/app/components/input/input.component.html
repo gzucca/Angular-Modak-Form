@@ -1,1 +1,36 @@
-<p>input works!</p>
+<div>
+  <mat-error *ngIf="pickType('')" inputType=""
+    >Please enter an inputType property</mat-error
+  >
+  <!-- *valid inputType values : 'datePicker', 'gender', 'idNumber' -->
+
+  <div *ngIf="pickType('datePicker')" inputType="datePicker">
+    <mat-form-field appearance="fill">
+      <mat-label>Choose a date</mat-label>
+      <input matInput [matDatepicker]="picker" />
+      <mat-hint>MM/DD/YYYY</mat-hint>
+      <mat-datepicker-toggle
+        matIconSuffix
+        [for]="picker"
+      ></mat-datepicker-toggle>
+      <mat-datepicker #picker></mat-datepicker>
+    </mat-form-field>
+  </div>
+
+  <div *ngIf="pickType('gender')" inputType="gender">
+    <mat-form-field appearance="fill">
+      <mat-label>Gender</mat-label>
+      <mat-select>
+        <mat-option *ngFor="let item of genders" [value]="item">{{item}}</mat-option>
+      </mat-select>
+    </mat-form-field>
+  </div>
+
+  <div *ngIf="pickType('idNumber')" inputType="idNumber">
+  <mat-form-field appearance="fill">
+    <mat-label>ID Number</mat-label>
+    <input matInput>
+  </mat-form-field>
+  </div>
+
+</div>
