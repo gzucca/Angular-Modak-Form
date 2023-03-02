@@ -1,6 +1,11 @@
-@import '../sass/styles.scss';
+@import '../css/_variables.scss';
 
-.container{
-  background-color: $md-sys-color-background ;
-  border: 2px solid red;
+.form {
+  background-color: $background-color;
+  padding: 32px;
+}
+
+.logo{
+  display: block;
+  margin: auto;
 }

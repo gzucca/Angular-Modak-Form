@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import {FormBuilder, Validators} from '@angular/forms';
 
 @Component({
   selector: 'app-header',
@@ -6,10 +7,13 @@ import { Component } from '@angular/core';
   styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent {
-  sections: string[] = ['Personal Information', 'Adress', 'Payment'];
-  currentSection: number = 0;
+  firstFormGroup = this._formBuilder.group({
+    firstCtrl: ['', Validators.required],
+  });
+  secondFormGroup = this._formBuilder.group({
+    secondCtrl: ['', Validators.required],
+  });
+  isLinear = true;
 
-  // isActive(sectionIndex: number){
-  //   return this.sections.[sectionIndex] === this.currentSection
-  // }
+  constructor(private _formBuilder: FormBuilder) {}
 }
