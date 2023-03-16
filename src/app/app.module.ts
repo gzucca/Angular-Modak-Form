@@ -4,22 +4,20 @@ import { FormsModule, ReactiveFormsModule  } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { HeaderComponent } from './components/header/header.component';
-import { PersonalInfoComponent } from './components/personal-info/personal-info.component';
+import { FormComponent } from './components/form/form.component';
+
 import { InputComponent } from './components/input/input.component';
-import { ButtonComponent } from './components/button/button.component';
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AngularMaterialModule } from './angular-material.module';
+import {CdkStepperModule} from '@angular/cdk/stepper';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    HeaderComponent,
-    PersonalInfoComponent,
+    FormComponent,
     InputComponent,
-    ButtonComponent,
   ],
   imports: [
     BrowserModule,
@@ -28,6 +26,7 @@ import { AngularMaterialModule } from './angular-material.module';
     FormsModule,
     ReactiveFormsModule,
     AngularMaterialModule,
+    CdkStepperModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

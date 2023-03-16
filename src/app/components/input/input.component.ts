@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-
+import { FormControl } from '@angular/forms';
 
 @Component({
   selector: 'app-input',
@@ -9,7 +9,9 @@ import { Component, Input } from '@angular/core';
 export class InputComponent {
   @Input() inputType: string = ''
   genders: string[] = ['Male', 'Female', 'Other', 'Rather not say']
-  idNumber: Number = 0;
+  idNumber: number;
+  @Input() control = new FormControl();
+  
   //*valid inputType values : 'datePicker', 'gender', 'idNumber'
 
   pickType(type: string) {

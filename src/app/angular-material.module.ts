@@ -69,7 +69,7 @@ const materialModules = [
   MatDatepickerModule,
   MatTooltipModule,
   MatNativeDateModule,
-  MatStepperModule
+  MatStepperModule,
 ];
 @NgModule({
   imports: [

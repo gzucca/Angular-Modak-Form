@@ -1,0 +1,34 @@
+<mat-horizontal-stepper class="form" color="accent" [linear]="isLinear">
+  <mat-step [stepControl]="firstFormGroup">
+    <form [formGroup]="firstFormGroup">
+      <ng-template matStepLabel>Personal Information</ng-template>
+      <!-- <mat-form-field>
+        <input matInput [matDatepicker]="picker" placeholder="Date of Birth" formControlName="dateOfBirth">
+        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+      </mat-form-field> -->
+      <app-input class="formInput" [control]="firstFormGroup.controls.date" required inputType="datePicker"></app-input>
+      <app-input class="formInput" [control]="firstFormGroup.controls.gender" required inputType="gender"></app-input>
+      <app-input class="formInput" [control]="firstFormGroup.controls.idNumber" required inputType="idNumber"></app-input>
+      <div>
+        <button class="formButton" mat-flat-button color="accent" matStepperNext>Next</button>
+      </div>
+    </form>
+  </mat-step>
+  <mat-step [stepControl]="secondFormGroup">
+    <form [formGroup]="secondFormGroup">
+      <!-- <mat-form-field>
+        <input matInput [matDatepicker]="picker" placeholder="Date of Birth" formControlName="dateOfBirth">
+        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+      </mat-form-field> -->
+      <app-input [control]="firstFormGroup.controls.date" required inputType="datePicker"></app-input>
+      <app-input [control]="firstFormGroup.controls.gender" required inputType="gender"></app-input>
+
+      <div>
+        <button mat-button matStepperPrevious>Back</button>
+        <button mat-button matStepperNext>Next</button>
+      </div>
+    </form>
+  </mat-step>
+</mat-horizontal-stepper>
